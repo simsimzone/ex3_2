@@ -37,6 +37,11 @@ void unEscape(char t [], char s [])
 				t[j] = '\n';
 			else if (s[i + 1] == 't')
 				t[j] = '\t';
+			else
+			{
+				t[j] = '\\';
+				i--;
+			}
 			j++;
 			i += 2;
 			break;
@@ -45,6 +50,7 @@ void unEscape(char t [], char s [])
 			break;
 		}
 	}
+	t[j] = '\0';
 }
 
 /*
